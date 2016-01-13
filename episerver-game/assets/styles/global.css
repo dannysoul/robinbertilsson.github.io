@@ -31,10 +31,37 @@ body {
   top: 50px;
 }
 
+.container .question-counter .qc-form {
+  display: none;
+}
+
+.container .question-counter .qc-form input {
+  background: #CCC;
+  border: 0;
+  font-size: 0.9rem;
+  font-weight: normal;
+  padding: 5px 10px;
+  color: #212121;
+}
+
+.input-error {
+  box-shadow: inset 0px 0px 50px firebrick;
+}
+
 .container .question-counter {
   font-size: 1.6rem;
   position: relative;
   top: -50px;
+  cursor: pointer;
+  display: flex;
+}
+
+.container .question-counter.form-visible .qc-status {
+  display: none;
+}
+
+.container .question-counter.form-visible .qc-form {
+  display: block;
 }
 
 .container .helpers {

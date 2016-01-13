@@ -137,12 +137,12 @@ $(document).ready(function() {
 
 
       q.text(questions[cq]);
-      qc.text("Question: " + (cq + 1) + "/" + questions.length);
+      $('.qc-status').text("Question: " + (cq + 1) + "/" + questions.length);
 
   $('body').keyup(function (e) {
     if(e.keyCode == 78) {
       // Next
-      if(cq <= questions.length) {
+      if(cq < questions.length - 1) {
         cq++;
       }
     }
@@ -154,6 +154,32 @@ $(document).ready(function() {
     }
 
     q.text(questions[cq]);
-    qc.text("Question: " + (cq + 1) + "/" + questions.length);
+    $('.qc-status').text("Question: " + (cq + 1) + "/" + questions.length);
+  });
+
+  qc.on('click', function() {
+    if(!$(this).hasClass('form-visible')) {
+      $(this).toggleClass("form-visible");
+    }
+  });
+
+  $('#submitBtn').on('click', function() {
+    var val = $('#questionId').val();
+
+    // @TODO: Check for numeric input 1-9 instead of true
+    if(false) {
+      $('#questionId').addClass('input-error');
+
+      setTimeout(function() {
+        $('#questionId').removeClass('input-error');
+      }, 1250);
+    } else {
+      setTimeout(function() {
+        $('.question-counter').removeClass("form-visible");
+      }, 10);
+      cq = val - 1;
+      q.text(questions[cq]);
+      $('.qc-status').text("Question: " + (cq + 1) + "/" + questions.length);
+    }
   });
 });

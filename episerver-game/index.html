@@ -12,7 +12,13 @@
   <body>
     <div class="container">
       <div class="title">EPiServer Certification Game - <i>*hint* You'll make the certification without any problem *hint*</i></div>
-      <div class="question-counter">Question 0/000</div>
+      <div class="question-counter">
+        <span class="qc-status">Question 0/000</span>
+        <span class="qc-form">
+          <input type="text" name="questionId" id="questionId"/>
+          <input type="submit" value="Go to selected" id="submitBtn"/>
+        </span>
+      </div>
       <div class="question"></div>
       <div class="helpers">
         "N" For next question
