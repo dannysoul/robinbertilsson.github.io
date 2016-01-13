@@ -136,7 +136,8 @@ $(document).ready(function() {
       q = $('.question');
 
 
-  q.text(questions[cq]);
+      q.text(questions[cq]);
+      qc.text("Question: " + (cq + 1) + "/" + questions.length);
 
   $('body').keyup(function (e) {
     if(e.keyCode == 78) {
