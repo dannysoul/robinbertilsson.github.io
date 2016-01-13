@@ -130,37 +130,82 @@ $(document).ready(function() {
     "Whats the right part of admin mode called?",
     "A template are running slowly, what can i do?",
   ];
+  var index = 0;
 
-  var cq = 0,
-      qc = $('.question-counter'),
-      q = $('.question');
+  function changeQuestion(arrayId) {
+    var question = $('.question');
+    question.text(questions[arrayId]);
+  }
 
+  function changeStatusText(arrayPos) {
+    var status = $('.qc-status');
+    var ret = "Question: " + (arrayPos+1) + "/" + questions.length;
+    status.text(ret);
+  }
 
-      q.text(questions[cq]);
-      $('.qc-status').text("Question: " + (cq + 1) + "/" + questions.length);
+  function isNextClicked() {
+    if(event.keyCode == 78) {
+      return true;
+    }
+    return false;
+  }
+
+  function isBackClicked(event) {
+    if(event.keyCode == 66) {
+      return true;
+    }
+    return false;
+  }
+
+  function toggleArrPosForm() {
+    var counter = $('.question-counter');
+
+    if(!counter.hasClass('form-visible')) {
+      counter.toggleClass("form-visible");
+    }
+  }
+
+  function toggleInputError(time) {
+    var input = $('#questionId');
+
+    input.addClass('input-error');
+    setTimeout(function() {
+      input.removeClass('input-error');
+    }, time);
+  }
+
+  function changeIndexViaValue(value) {
+    var counter = $('.question-counter');
+    setTimeout(function() {
+      counter.removeClass("form-visible");
+    }, 10);
+
+    index = value - 1;
+    changeQuestion(index);
+    changeStatusText(index);
+  }
+
+  changeQuestion(index);
+  changeStatusText(index);
 
   $('body').keyup(function (e) {
-    if(e.keyCode == 78) {
-      // Next
-      if(cq < questions.length - 1) {
-        cq++;
+    if(isNextClicked(e)) {
+      if(index < questions.length - 1) {
+        index++;
       }
     }
-    else if(e.keyCode == 66) {
-      // Back
-      if(cq !== 0) {
-        cq--;
+    else if(isBackClicked(e)) {
+      if(index !== 0) {
+        index--;
       }
     }
 
-    q.text(questions[cq]);
-    $('.qc-status').text("Question: " + (cq + 1) + "/" + questions.length);
+    changeQuestion(index);
+    changeStatusText(index);
   });
 
-  qc.on('click', function() {
-    if(!$(this).hasClass('form-visible')) {
-      $(this).toggleClass("form-visible");
-    }
+  $('.question-counter').on('click', function() {
+    toggleArrPosForm();
   });
 
   $('#submitBtn').on('click', function() {
@@ -168,18 +213,9 @@ $(document).ready(function() {
 
     // @TODO: Check for numeric input 1-9 instead of true
     if(false) {
-      $('#questionId').addClass('input-error');
-
-      setTimeout(function() {
-        $('#questionId').removeClass('input-error');
-      }, 1250);
+      toggleInputError(1250);
     } else {
-      setTimeout(function() {
-        $('.question-counter').removeClass("form-visible");
-      }, 10);
-      cq = val - 1;
-      q.text(questions[cq]);
-      $('.qc-status').text("Question: " + (cq + 1) + "/" + questions.length);
+      changeIndexViaValue(val);
     }
   });
 });
