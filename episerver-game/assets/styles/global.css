@@ -64,6 +64,11 @@ body {
   display: block;
 }
 
+.container .answer {
+  margin-top: 40px;
+  color: #212121;
+}
+
 .container .helpers {
   font-size: 1rem;
   color: #CCC;
