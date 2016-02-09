@@ -332,7 +332,7 @@ $(document).ready(function() {
   $('body').keyup(function (e) {
     if(isNextClicked(e)) {
       if(index < questions.length - 1) {
-		answer.css('color', '#212121');
+		    answer.css('color', '#212121');
         index++;
       }
     }
@@ -341,13 +341,31 @@ $(document).ready(function() {
 	}
     else if(isBackClicked(e)) {
       if(index !== 0) {
-		answer.css('color', '#212121');
+		    answer.css('color', '#212121');
         index--;
       }
     }
 
     changeQuestion(index);
     changeStatusText(index);
+  });
+
+  $('.arrow-left').on('click', function() {
+    if(index !== 0) {
+        answer.css('color', '#212121');
+        index--;
+        changeQuestion(index);
+        changeStatusText(index);
+      }
+  });
+
+  $('.arrow-right').on('click', function() {
+    if(index < questions.length - 1) {
+        answer.css('color', '#212121');
+        index++;
+        changeQuestion(index);
+        changeStatusText(index);
+      }
   });
 
   $('.question-counter').on('click', function() {
