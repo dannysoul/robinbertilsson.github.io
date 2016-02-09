@@ -65,31 +65,18 @@ body {
 }
 
 .container .question {
-  height: 100px;
+  height: auto;
 }
 
 .container .answer {
   margin-top: 40px;
-  color: #212121;
+  color: #FFF;
+  display: none;
   height: 100px;
 }
 
-.container .arrows {
-  display:inherit;
-}
-
-.arrow-left {
-  width: 100px;
-  height: 100px;
-  font-size: 80px;
-  margin-right: 60px;
-}
-
-.arrow-right {
-  width: 100px;
-  height: 100px;
-  font-size: 80px;
-  margin-left: 60px;
+.container .answer.visible {
+  display: block;
 }
 
 .container .helpers {
@@ -100,4 +87,50 @@ body {
   display: block;
   bottom: 50px;
   width: 100%;
+}
+
+.container .m-helpers {
+  display: none;
+}
+
+@media screen and (max-width: 620px) {
+  .container .question-counter {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .container .helpers {
+    display: none;
+  }
+
+  .container .question {
+    margin-top: -10px;
+    font-size: 2.3rem;
+  }
+
+  .container .answer {
+    font-size: 1.3rem;
+  }
+
+  .container .m-helpers {
+    position: absolute;
+    bottom: 25px;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+
+  .container .m-helpers .show-answer {
+    font-size: 1.2rem;
+    padding-top: 5px;
+  }
+
+  .container .m-helpers .next, .container .m-helpers .prev {
+    padding: 15px;
+  }
 }

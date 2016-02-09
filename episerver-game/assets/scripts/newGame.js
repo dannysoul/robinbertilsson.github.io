@@ -130,136 +130,137 @@ $(document).ready(function() {
     "Whats the right part of admin mode called?",
     "A template are running slowly, what can i do?",
   ];
+
   var answers = [
-  "MSQL Server 2008, 2008 R2, 2012, 2014",
-  "MWS 2012, 2012 R2",
-  "IE 10, IE 11, Firefox (latest), Chrome (latest)",
-  "Redirect (no redirects that bypasses episerver license restrictions)",
-  "License.config, place it in the root folder of the web project ",
-  "Parents > PageName (PageUrl or GetUrl methods)",
-  "Edit > select page > properties",
-  "URL changes, except for the pagename",
-  "No, they update automagicly",
-  "Yes, they are not updated and must be edited manually",
-  "Not at all unless they’re changed to another node",
-  "Gives the editor the ability to change the url to a simpler one",
-  "Name in url changes the url of the page whilst simple adress uses both the new and old url to prevent external links to break.",
-  "The fallback language will be shown until the desired language is available. Replacement language overrides this.",
-  "The master language inherits from system os (and/or browser?), master language is a language branch.",
-  "CultureSpecific attribute on property. Defines if this property should have a different value for each language. If not set: true for strings, other types false.",
-  "Highlight > Actions > Remove/Delete",
-  "Page by page or with a scheduled job",
-  "Yes they update their URL as well",
-  "Create internal/external link, show text or fetch information from another page at the page properties, settingstab.",
-  "?",
-  "Each page has Sortindex @ the Settings tab of Pageproperties",
-  "Sort subpages edits the childrens sortindex depending on which choice the editor choses. Sortindex can be used for many diffrent applications, such as the order of the pagetree.",
-  "They are properties that are inherited throughout the site. They can be created in code with the DynamicProperty class or in the Admin",
-  "Press Publish? button and chose Scheduled publish",
-  "Page properties > Tools > Handle Expirationdate & Archiving - Archive puts the content where it cant be seen by the user but does not delete it.",
-  "It allows the editor what to show in the navigation for the user.",
-  "Open the XForm block, press the import/export tab",
-  "Press the Tasks tab at top of the navigationbar, select one of the choices",
-  "All: all criterias must be met. Any: any criterias must be met. Points: if X amount of points is met from each criteria that gives X Y Z amount.",
-  "Include the fallback content in a personalization group but leave the visitor group field empty.",
-  "Editormode > “Eye” > Visitorgroups",
-  "Site, Time & Place, URL, Visitor Groups",
-  "Admin > Admin > Create User / Administer Groups",
-  "Admin > Admin > Set Access Rights (press a page and chose who has rights)",
-  "In Admin u can chose to edit this for subpages also",
-  "Chosing who has access to what, Administrators access everything. WebAdmins can access the admin mode and edit mode. WebEditors can access the edit mode only.",
-  "Admin > Config > Permissions for Functions. Used to provide certain people with information for development, bug fixing or special editing",
-  "No, but you can assign them to a tab with certain access rights.",
-  "It runs with a anonymous user profile. Link validation, empty trash, subscriptions.",
-  "Admin > Config > Mirroring",
-  "Remirror the channel",
-  "EPiServer has a custom error message. Email notifications are available after enabling them in web.config (and setting up a smtp server?)",
-  "ContentItems, ContentTypes, Frames, Dynamic Property Definitions, Tabs, Categories, Visitor groups",
-  "The content must be published",
-  "The maximum number of page versions that EPiServer will keep",
-  "Admin > Config > Manage Websites > Add Site > Fill Data (URL=DefaultURL) > Add",
-  "Add/edit parameters in the web.config",
-  "The uiCulture configures which language is used for the UI (for editors)",
-  "Edits the CSS path for the TinyMCE editor’s CSS file",
-  "Web.config > <caching> <profiles>",
-  "Web.config > <membership defaultProvider””>",
-  "WindowsRoleProvider and ActiveDirectoryRoleProvider does not allow you to create roles.",
-  "Used by protected modules, virtual path to static files",
-  "Webconfig?",
-  "The location of the App_Data folder, defined in the web.config",
-  "One major difference when using EPiServer’s own cache classes is that cache changes are propagated to load-balanced web servers as well. ",
-  "The EPiServer Events System is used to distribute events with an EPiServer CMS site and between sites in an enterprise and/or load balanced scenario.",
-  "Event API ???",
-  "Web.config > <applicationSettings> uiEditorCssPaths",
-  "Install the Spellchecker add-on for TinyMCE",
-  "Pass iframe parameter in the TinyMCE init",
-  "Debug is enabled by default in EPiServerLog.config",
-  "By using the log4net namespace when creating a logger class",
-  "By using the @Html.Translate(“”)",
-  "By using language xml files <contenttypes> ",
-  "Same as above but <groups>",
-  "Override the setDefaultValues method",
-  "ContentData class (base class for classes that holds content)",
-  "CreateWritableClone() is needed to edit and update an object because they are read-only (Improved performance?)",
-  "Content related (CreatedContent, DeletedContent and so on)",
-  "Create a PropertyCriteriaCollection with one or many PropertyCriteria obejcts (search conditions) then use FindPagesWithCriteria (overload to use language branch parameter if needed)",
-  "During save (EPiServer.IContentRepository.Save)",
-  "It’s needed to enable overriding of the property",
-  "It’s important to use to prevent searches from returning root, trash-bin items and so on",
-  "When a selection factory class, you implement the ISelectionFactory interface. These classes are used to sort data sources for properties that are edited using EPiServer’s SelectionEditor. ",
-  "A pagetype which is used to contain pages (aka folderpage). It does not have a view nor a controller.",
-  "Bool inEditMode = PageEditing.PageIsInEditMode",
-  "@Html.PropertyFor() allows editing to the area whilst @Html.DisplayFor() shows the information",
-  "If we want to change how a property type is rendered using the PropertyFor / DisplayFor methods, we simply create a Display Template with the same name of the type (default location is ~/Views/Shared/DisplayTemplates). Then use [UiHint (UiHint.PropertyName)] to make ASP.NET understand what you want.",
-  "By using the PageRouteHelper class",
-  "Aftersubmit, beforeload, beforesubmit",
-  "Create a class with the [InitializeableModule] attribute and let it inherit from the interface IInitializeableModule",
-  "By using the [ModuleDependency[typeof[ModuleThatIDependOn]]] attribute, you make sure the modules are initiated in the correct order",
-  "The major advantage of this is that they are executed before Application_Start, which allows the application to be fully initialized and usable from within Application_Start",
-  "The [MenuItem] attribute, the IMenuProvider interface and by adding <navigation> to the <episerver.shell> in web.config",
-  "By using the [EPiServer.PlugIn.ScheduledJob] attribute on your class",
-  "Om jobb k?rs automatiskt ?r HttpContect.Current null. Vid manuelt med den inloggadesr?ttigheter",
-  "The normal way, with language files",
-  "By overriding the default plugin initzialiser",
-  "[PageDefinitionTypePlugIn(DisplayName = “YourPropertyName”)]",
-  "PropertyData",
-  "[Gadget], which you put on the controller",
-  "The class needs to inherit from IDynamicData and on change, use DynamicDataStoreFactory.Instance.CreateStore(typeof(YourClass))",
-  "http://world.episerver.com/support/bug-list/",
-  "http://world.episerver.com/support/",
-  "Locate the block > hover + click the top-right menu icon > personalize",
-  "Yes, incase of multiple visitorgroups",
-  "Html.ContentLink(contentReference)",
-  "Dynamic Data Store since EPiCMS6",
-  "SQL",
-  "Change the default renderers (BAD) or create a custom display template in Views/Shared/DisplayTemplates, this will override the default ones",
-  "?",
-  "Using NuGet packages found in the EPiServer NuGet feed on http://nuget.episerver.com",
-  "Using NuGet packages found in the EPiServer NuGet feed on http://nuget.episerver.com (yes same answer)",
-  "?",
-  "The ASP.NET version does not know if the cached content is old, or if the content is unpublished, EPiServer’s version handles this issue",
-  "The pages/blocks that are not translated will written with italic text",
-  "Dojo/Dijit, or edit TinyMCE",
-  "One",
-  "Decoupling of the system and cleaner code",
-  "?",
-  "Override the setDefaultValues method (68)",
-  "Admin mode overrides the values set in code",
-  "Override the setDefaultValues method (68, 113)",
-  "Admin > Config > Security > Permissions for Functions > Defailted error messages for troubleshooting",
-  "?",
-  "By using the FilterForVisitor() ext. method",
-  "CurrentPage.ACL.QueryDistinctAccess(EpiServer.Security.AccessLevel.Read)",
-  "PageEditing.PageIsInEditMode",
-  "Register the IDisplayMode and create classes for Resolutions",
-  "Web.config (<caching><profiles>)",
-  ".Save(); (from the DataFactory class)",
-  "Project- and item templates, Alloy Demo",
-  "To provide visitors with different content depending on who they are / what time it is, and so on to make the content speak as much as possible to the specific user",
-  "No, it’s not",
-  "Left-hand “navigation” pane / Pagetree pane",
-  "Right-hand “assets” pane / Assets pane",
-  "?",
+    "MSQL Server 2008, 2008 R2, 2012, 2014",
+    "MWS 2012, 2012 R2",
+    "IE 10, IE 11, Firefox (latest), Chrome (latest)",
+    "Redirect (no redirects that bypasses episerver license restrictions)",
+    "License.config, place it in the root folder of the web project ",
+    "Parents > PageName (PageUrl or GetUrl methods)",
+    "Edit > select page > properties",
+    "URL changes, except for the pagename",
+    "No, they update automagicly",
+    "Yes, they are not updated and must be edited manually",
+    "Not at all unless theyï¿½re changed to another node",
+    "Gives the editor the ability to change the url to a simpler one",
+    "Name in url changes the url of the page whilst simple adress uses both the new and old url to prevent external links to break.",
+    "The fallback language will be shown until the desired language is available. Replacement language overrides this.",
+    "The master language inherits from system os (and/or browser?), master language is a language branch.",
+    "CultureSpecific attribute on property. Defines if this property should have a different value for each language. If not set: true for strings, other types false.",
+    "Highlight > Actions > Remove/Delete",
+    "Page by page or with a scheduled job",
+    "Yes they update their URL as well",
+    "Create internal/external link, show text or fetch information from another page at the page properties, settingstab.",
+    "?",
+    "Each page has Sortindex @ the Settings tab of Pageproperties",
+    "Sort subpages edits the childrens sortindex depending on which choice the editor choses. Sortindex can be used for many diffrent applications, such as the order of the pagetree.",
+    "They are properties that are inherited throughout the site. They can be created in code with the DynamicProperty class or in the Admin",
+    "Press Publish? button and chose Scheduled publish",
+    "Page properties > Tools > Handle Expirationdate & Archiving - Archive puts the content where it cant be seen by the user but does not delete it.",
+    "It allows the editor what to show in the navigation for the user.",
+    "Open the XForm block, press the import/export tab",
+    "Press the Tasks tab at top of the navigationbar, select one of the choices",
+    "All: all criterias must be met. Any: any criterias must be met. Points: if X amount of points is met from each criteria that gives X Y Z amount.",
+    "Include the fallback content in a personalization group but leave the visitor group field empty.",
+    "Editormode > ï¿½Eyeï¿½ > Visitorgroups",
+    "Site, Time & Place, URL, Visitor Groups",
+    "Admin > Admin > Create User / Administer Groups",
+    "Admin > Admin > Set Access Rights (press a page and chose who has rights)",
+    "In Admin u can chose to edit this for subpages also",
+    "Chosing who has access to what, Administrators access everything. WebAdmins can access the admin mode and edit mode. WebEditors can access the edit mode only.",
+    "Admin > Config > Permissions for Functions. Used to provide certain people with information for development, bug fixing or special editing",
+    "No, but you can assign them to a tab with certain access rights.",
+    "It runs with a anonymous user profile. Link validation, empty trash, subscriptions.",
+    "Admin > Config > Mirroring",
+    "Remirror the channel",
+    "EPiServer has a custom error message. Email notifications are available after enabling them in web.config (and setting up a smtp server?)",
+    "ContentItems, ContentTypes, Frames, Dynamic Property Definitions, Tabs, Categories, Visitor groups",
+    "The content must be published",
+    "The maximum number of page versions that EPiServer will keep",
+    "Admin > Config > Manage Websites > Add Site > Fill Data (URL=DefaultURL) > Add",
+    "Add/edit parameters in the web.config",
+    "The uiCulture configures which language is used for the UI (for editors)",
+    "Edits the CSS path for the TinyMCE editorï¿½s CSS file",
+    "Web.config > <caching> <profiles>",
+    "Web.config > <membership defaultProviderï¿½ï¿½>",
+    "WindowsRoleProvider and ActiveDirectoryRoleProvider does not allow you to create roles.",
+    "Used by protected modules, virtual path to static files",
+    "Webconfig?",
+    "The location of the App_Data folder, defined in the web.config",
+    "One major difference when using EPiServerï¿½s own cache classes is that cache changes are propagated to load-balanced web servers as well. ",
+    "The EPiServer Events System is used to distribute events with an EPiServer CMS site and between sites in an enterprise and/or load balanced scenario.",
+    "Event API ???",
+    "Web.config > <applicationSettings> uiEditorCssPaths",
+    "Install the Spellchecker add-on for TinyMCE",
+    "Pass iframe parameter in the TinyMCE init",
+    "Debug is enabled by default in EPiServerLog.config",
+    "By using the log4net namespace when creating a logger class",
+    "By using the @Html.Translate(ï¿½ï¿½)",
+    "By using language xml files <contenttypes> ",
+    "Same as above but <groups>",
+    "Override the setDefaultValues method",
+    "ContentData class (base class for classes that holds content)",
+    "CreateWritableClone() is needed to edit and update an object because they are read-only (Improved performance?)",
+    "Content related (CreatedContent, DeletedContent and so on)",
+    "Create a PropertyCriteriaCollection with one or many PropertyCriteria obejcts (search conditions) then use FindPagesWithCriteria (overload to use language branch parameter if needed)",
+    "During save (EPiServer.IContentRepository.Save)",
+    "Itï¿½s needed to enable overriding of the property",
+    "Itï¿½s important to use to prevent searches from returning root, trash-bin items and so on",
+    "When a selection factory class, you implement the ISelectionFactory interface. These classes are used to sort data sources for properties that are edited using EPiServerï¿½s SelectionEditor. ",
+    "A pagetype which is used to contain pages (aka folderpage). It does not have a view nor a controller.",
+    "Bool inEditMode = PageEditing.PageIsInEditMode",
+    "@Html.PropertyFor() allows editing to the area whilst @Html.DisplayFor() shows the information",
+    "If we want to change how a property type is rendered using the PropertyFor / DisplayFor methods, we simply create a Display Template with the same name of the type (default location is ~/Views/Shared/DisplayTemplates). Then use [UiHint (UiHint.PropertyName)] to make ASP.NET understand what you want.",
+    "By using the PageRouteHelper class",
+    "Aftersubmit, beforeload, beforesubmit",
+    "Create a class with the [InitializeableModule] attribute and let it inherit from the interface IInitializeableModule",
+    "By using the [ModuleDependency[typeof[ModuleThatIDependOn]]] attribute, you make sure the modules are initiated in the correct order",
+    "The major advantage of this is that they are executed before Application_Start, which allows the application to be fully initialized and usable from within Application_Start",
+    "The [MenuItem] attribute, the IMenuProvider interface and by adding <navigation> to the <episerver.shell> in web.config",
+    "By using the [EPiServer.PlugIn.ScheduledJob] attribute on your class",
+    "Om jobb k?rs automatiskt ?r HttpContect.Current null. Vid manuelt med den inloggadesr?ttigheter",
+    "The normal way, with language files",
+    "By overriding the default plugin initzialiser",
+    "[PageDefinitionTypePlugIn(DisplayName = ï¿½YourPropertyNameï¿½)]",
+    "PropertyData",
+    "[Gadget], which you put on the controller",
+    "The class needs to inherit from IDynamicData and on change, use DynamicDataStoreFactory.Instance.CreateStore(typeof(YourClass))",
+    "http://world.episerver.com/support/bug-list/",
+    "http://world.episerver.com/support/",
+    "Locate the block > hover + click the top-right menu icon > personalize",
+    "Yes, incase of multiple visitorgroups",
+    "Html.ContentLink(contentReference)",
+    "Dynamic Data Store since EPiCMS6",
+    "SQL",
+    "Change the default renderers (BAD) or create a custom display template in Views/Shared/DisplayTemplates, this will override the default ones",
+    "?",
+    "Using NuGet packages found in the EPiServer NuGet feed on http://nuget.episerver.com",
+    "Using NuGet packages found in the EPiServer NuGet feed on http://nuget.episerver.com (yes same answer)",
+    "?",
+    "The ASP.NET version does not know if the cached content is old, or if the content is unpublished, EPiServerï¿½s version handles this issue",
+    "The pages/blocks that are not translated will written with italic text",
+    "Dojo/Dijit, or edit TinyMCE",
+    "One",
+    "Decoupling of the system and cleaner code",
+    "?",
+    "Override the setDefaultValues method (68)",
+    "Admin mode overrides the values set in code",
+    "Override the setDefaultValues method (68, 113)",
+    "Admin > Config > Security > Permissions for Functions > Defailted error messages for troubleshooting",
+    "?",
+    "By using the FilterForVisitor() ext. method",
+    "CurrentPage.ACL.QueryDistinctAccess(EpiServer.Security.AccessLevel.Read)",
+    "PageEditing.PageIsInEditMode",
+    "Register the IDisplayMode and create classes for Resolutions",
+    "Web.config (<caching><profiles>)",
+    ".Save(); (from the DataFactory class)",
+    "Project- and item templates, Alloy Demo",
+    "To provide visitors with different content depending on who they are / what time it is, and so on to make the content speak as much as possible to the specific user",
+    "No, itï¿½s not",
+    "Left-hand ï¿½navigationï¿½ pane / Pagetree pane",
+    "Right-hand ï¿½assetsï¿½ pane / Assets pane",
+    "?",
   ];
   var index = 0;
   var answer = $('.answer');
@@ -267,7 +268,7 @@ $(document).ready(function() {
 
   function changeQuestion(arrayId) {
     question.text(questions[arrayId]);
-	answer.text(answers[arrayId]);
+    answer.text(answers[arrayId]);
   }
 
   function changeStatusText(arrayPos) {
@@ -282,13 +283,6 @@ $(document).ready(function() {
     }
     return false;
   }
-  
-  function isAnswerClicked() {
-	if(event.keyCode == 65) {
-		return true;
-	}
-	return false;
-  }
 
   function isBackClicked(event) {
     if(event.keyCode == 66) {
@@ -302,6 +296,7 @@ $(document).ready(function() {
 
     if(!counter.hasClass('form-visible')) {
       counter.toggleClass("form-visible");
+      $('#questionId').focus();
     }
   }
 
@@ -336,12 +331,9 @@ $(document).ready(function() {
         index++;
       }
     }
-	else if(isAnswerClicked(e)) {
-		answer.css('color', 'gray');
-	}
     else if(isBackClicked(e)) {
       if(index !== 0) {
-		    answer.css('color', '#212121');
+  	    answer.css('color', '#212121');
         index--;
       }
     }
@@ -350,23 +342,34 @@ $(document).ready(function() {
     changeStatusText(index);
   });
 
-  $('.arrow-left').on('click', function() {
+  $('.prev').on('click', function() {
     if(index !== 0) {
-        answer.css('color', '#212121');
+        answer.removeClass('visible')
         index--;
         changeQuestion(index);
         changeStatusText(index);
       }
   });
 
-  $('.arrow-right').on('click', function() {
+  $('.next').on('click', function() {
     if(index < questions.length - 1) {
-        answer.css('color', '#212121');
+        answer.removeClass('visible')
         index++;
         changeQuestion(index);
         changeStatusText(index);
       }
   });
+
+  $('.show-answer').on('click', function() {
+    answer.toggleClass('visible');
+  })
+
+  $(document).keypress(function(e) {
+    console.log(e.keyCode);
+    if(e.keyCode === 97 && !$('.question-counter').hasClass('form-visible')) {
+      answer.toggleClass('visible');
+    }
+  })
 
   $('.question-counter').on('click', function() {
     toggleArrPosForm();

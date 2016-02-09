@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="assets/styles/normalize.min.css">
     <link rel="stylesheet" href="assets/styles/global.css">
     <script src="assets/scripts/jquery-2.2.0.min.js"></script>
+    <script src="assets/scripts/functions.js"></script>
     <script src="assets/scripts/newGame.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   </head>
   <body>
     <div class="container">
-      <div class="title">EPiServer Certification Game - <i>*hint* You'll make the certification without any problem *hint*</i></div>
       <div class="question-counter">
         <span class="qc-status">Question 0/000</span>
         <span class="qc-form">
@@ -22,20 +23,23 @@
       </div>
       <div class="question"></div>
       <div class="answer"></div>
-      <div class="arrows">
-        <div class="arrow-left">
-          <a>&#10096;</a>
-        </div>
-        <div class="arrow-right">
-          <a>&#10097;</a>
-        </div>
-      </div>
       <div class="helpers">
         "N" For next question
         <br />
 		    "A" To show the answer
         <br />
         "B" For previous question
+      </div>
+      <div class="m-helpers">
+        <div class="prev">
+          <div>&#10096;</div>
+        </div>
+        <div class="show-answer">
+          Show Answer
+        </div>
+        <div class="next">
+          <div>&#10097;</div>
+        </div>
       </div>
     </div>
   </body>
